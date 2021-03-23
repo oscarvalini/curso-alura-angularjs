@@ -1,4 +1,4 @@
-angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute'])
+angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute', 'meusServicos'])
 .config(function($routeProvider, $locationProvider) {
 
     //Essa configuração ativa o módulo do HTML5 que trabalha com rotas. Na práticam utilizando
@@ -13,6 +13,11 @@ angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute'])
     })
 
     $routeProvider.when('/fotos/new', {
+        templateUrl: 'partials/foto.html',
+        controller: 'FotoController'   
+    })
+
+    $routeProvider.when('/fotos/edit/:fotoId', {
         templateUrl: 'partials/foto.html',
         controller: 'FotoController'   
     })
